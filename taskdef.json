@@ -10,9 +10,7 @@
                     "containerPort": 8080,
                     "protocol": "tcp"
             }],
-
-    "taskRoleArn": "arn:aws:iam::473620331716:role/ecsTaskExecutionRole",
-
+        
     "logConfiguration": {
                     "logDriver": "awslogs",
                     "options": {
