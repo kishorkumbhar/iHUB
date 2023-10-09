@@ -16,7 +16,7 @@ pipeline {
              sh '''
              env
               '''
-             git branch: 'main', url: 'git@github.com:kishorkumbhar/iHUB.git'
+             git branch: 'main', url: 'https://github.com/kishorkumbhar/iHUB.git'
             }
         }
         stage('Setting Up Docker Tag , Build and Push Image to ECR'){
