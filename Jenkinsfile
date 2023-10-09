@@ -36,7 +36,7 @@ pipeline {
                     echo "image tag is ${IMAGETAG}"
                     currentBuild.displayName = "[${BUILD_NUMBER}] ${IMAGETAG}"
                     currentBuild.description = "SERVICE_NAME:${SERVICE_NAME}"
-                    sh "maven clean install"
+                    sh "mvn clean install"
                     sh "docker build -t ${ECR_REPO_URL}:${IMAGETAG} -f Dockerfile ."
                     sh "docker push ${ECR_REPO_URL}:${IMAGETAG}"
                    }
