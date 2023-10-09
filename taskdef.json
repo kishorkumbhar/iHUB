@@ -1,0 +1,31 @@
+{
+    "family": "iHUB-Demo-1",
+    "executionRoleArn": "arn:aws:iam::473620331716:role/ecsTaskExecutionRole",
+    "containerDefinitions": [{
+            "name": "iHUB-Demo-1",
+            "image": "ECR_REPO_URL:DOCKER_IMAGE_TAG",
+            "privileged": true,
+            "memoryReservation": 256,
+            "portMappings": [{
+                    "containerPort": 80,
+                    "protocol": "tcp"
+            }],
+
+
+    "logConfiguration": {
+                    "logDriver": "awslogs",
+                    "options": {
+                            "awslogs-group": "/ecs/iHUB-Demo-1",
+                            "awslogs-region": "ap-south-1",
+                            "awslogs-stream-prefix": "ecs"
+                    }
+            },
+
+            "essential": true
+
+    }],
+    "requiresCompatibilities": [
+            "EC2"
+    ],
+    "networkMode": "awsvpc"
+}
