@@ -2,21 +2,21 @@ pipeline {
     agent any
     environment {
         AWS_DEFAULT_REGION = "ap-south-1"
-        CLUSTER_NAME= "Deify-Dev"
+        CLUSTER_NAME= "WhiteBooks-Prod-ECS-Cluster-Prod"
         DESIRED_COUNT= "1"
         BRANCH_NAME = "${GIT_BRANCH.split('origin/')[1].replaceAll('/','-')}"
         //DOCKER_IMAGE_TAG = "${BRANCH_NAME}_${GIT_COMMIT.take(7)}"
-        ECR_REPO_URL = "808967907157.dkr.ecr.ap-south-1.amazonaws.com/frontend"
-        SERVICE_NAME = "Deify-Frontend-Service"
-        FAMILY = "Deify-Frontend-TD"
+        ECR_REPO_URL = "473620331716.dkr.ecr.ap-south-1.amazonaws.com/ihub-demo-1"
+        SERVICE_NAME = "iHUB-Demo"
+        FAMILY = "iHUB-Demo-1"
     }
     stages {
-       stage('Checkout GitLab') {
+       stage('Checkout GitHub') {
             steps {
              sh '''
              env
               '''
-             git branch: 'release', credentialsId: 'Deify-Jenkins', url: 'git@sourcerepository.deifysolutions.com:macx/macxfrontend.git'
+             git branch: 'main', url: 'git@github.com:kishorkumbhar/iHUB.git'
             }
         }
         stage('Setting Up Docker Tag , Build and Push Image to ECR'){
