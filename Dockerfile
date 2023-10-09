@@ -3,3 +3,4 @@ RUN apk update && apk add bash
 WORKDIR /app
 COPY /target/iHUB-Demo.jar /app
 EXPOSE 8080
+CMD ["java", "-jar", "iHUB-Demo.jar"]
