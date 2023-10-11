@@ -7,6 +7,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class Controller {
     @RequestMapping ("/ihub")
     public String index(){
-        return "Springboot Application iHUB-Demo-v2 :)";
+        return "Hi Krishna Sir :)";
     }
 }
