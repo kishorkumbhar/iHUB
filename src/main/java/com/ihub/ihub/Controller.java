@@ -1,9 +1,9 @@
 package com.ihub.ihub;
 
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Controller;
 
-@RestController
+@Controller
 public class Controller {
     @RequestMapping ("/public")
     public String home(){
