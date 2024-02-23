@@ -27,7 +27,7 @@
     <script>
         function initiateConnection() {
             var xhr = new XMLHttpRequest();
-            xhr.open("GET", "whitebooks-poc-21698596.ap-south-1.elb.amazonaws.com", true);
+            xhr.open("GET", "http://whitebooks-poc-21698596.ap-south-1.elb.amazonaws.com", true);
             xhr.setRequestHeader("target", "abc.xyz");
             xhr.onreadystatechange = function () {
                 if (xhr.readyState === XMLHttpRequest.DONE) {
